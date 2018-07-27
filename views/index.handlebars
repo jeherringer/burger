@@ -5,7 +5,7 @@
         </h1>
     </div>
     <div class="row">
-        <img alt="burger icon" class="burger-icon" src="assets/burger.png">
+        <img alt="burger icon" class="burger-icon" src="https://pre00.deviantart.net/5aef/th/pre/i/2009/217/1/5/cartoon_burger_by_viperfan91.jpg">
         </img>
     </div>
     <div class="row">
@@ -39,72 +39,77 @@
         </div>
     </div>
 </div>
-{{#each burgers}}
-	{{#if devoured}}
+{{#each burgers}} {{#if devoured}}
 <li class="collection-item devoured">
     <input name="id" type="hidden" value="{{this.id}}">
-        <span name="burger-name">
-        </span>
-        {{this.burger_name}}
+    <span name="burger-name">
+    </span>
+    {{this.burger_name}}
     </input>
 </li>
 {{else}}
 <li class="collection-item not-devoured">
     <form action="/?_method=PUT" class="create-update-form" method="POST">
         <input name="id" type="hidden" value="{{this.id}}">
-            <div class="row center-vert">
-                <div class="col s6">
-                    <p>
-                        <span name="burger-name">
-                        </span>
-                        {{this.burger_name}}
-                    </p>
-                </div>
-                <div class="col s6 submit-parent">
-                    <button class="secondary-content waves-effect waves-light btn" type="submit">
-                        Devour!
-                    </button>
-                </div>
+        <div class="row center-vert">
+            <div class="col s6">
+                <p>
+                    <span name="burger-name">
+                    </span>
+                    {{this.burger_name}}
+                </p>
             </div>
+            <div class="col s6 submit-parent">
+                <button class="secondary-content waves-effect waves-light btn" type="submit">
+                    Devour!
+                </button>
+            </div>
+        </div>
         </input>
     </form>
 </li>
-{{/if}}
-{{/each}}
+{{/if}} {{/each}}
 <script>
     $('.devoured').appendTo($('.devoured-group'));
-	$('.not-devoured').appendTo($('.not-devoured-group'));
+    $('.not-devoured').appendTo($('.not-devoured-group'));
 </script>
 <style>
-	body {
-		background-color: #f8f0b9;
-	}
+    body {
+        background-color: #f8f0b9;
+    }
+
     .title {
-		margin-top: 70px;
-		font-family: 'Permanent Marker', cursive;
-		text-align: center;
-		color: #b12411;
-	}
-	
-	.burger-icon {
-		display: block;
-	    margin: auto;
-	}
-	p {
-		font-family: 'Open Sans', sans-serif;
-		vertical-align: middle;
-		line-height: 36px;
-		margin: 0px;
-	}
-	
-	.center-vert {
-		margin: 0px;
-	}
-	li.collection-item.devoured, li.collection-item.not-devoured {
-		background-color: #fcf7da;
-	}
-	.devoured-group {
-		text-decoration: line-through;
-		color: grey;
-	}
+        margin-top: 70px;
+        font-family: 'Permanent Marker', cursive;
+        text-align: center;
+        color: #b12411;
+    }
+
+    .burger-icon {
+        display: block;
+        margin: auto;
+        width: 150px;
+        height: 150px;
+    }
+
+    p {
+        font-family: 'Open Sans', sans-serif;
+        vertical-align: middle;
+        line-height: 36px;
+        margin: 0px;
+    }
+
+    .center-vert {
+        margin: 0px;
+    }
+
+    li.collection-item.devoured,
+    li.collection-item.not-devoured {
+        background-color: #fcf7da;
+    }
+
+    .devoured-group {
+        text-decoration: line-through;
+        color: grey;
+    }
 </style>
