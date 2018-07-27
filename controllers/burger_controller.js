@@ -1,4 +1,6 @@
 var burger = require("../models/burger.js");
+var express = require("express");
+var app = express();
 
 var controller = function(app) {
 	app.get('/', function(req, res) {
